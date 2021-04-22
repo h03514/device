@@ -8,6 +8,7 @@
     <title>Compnay Device</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="dist/style/common.css" />
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="js/common.js"></script>
 </head>
 
@@ -18,66 +19,72 @@
         </nav>
     </header>
     <main>
-        <div class="container">
+        <div id="app" class="container">
+            <div class="buttonGroup mt-5 d-flex">
+                <button @click="disabled=1" class="btn btn-primary insert">Insert</button> &nbsp;&nbsp;
+                <button class="btn btn-warning query">Query</button>&nbsp;&nbsp;
+                <button class="btn btn-danger delete ml-auto">Delete</button>
+            </div>
             <div class="row">
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Name</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Username" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">English Name</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="English Name" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="English Name" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Location</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Location" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Location" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Company Code</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Company Code" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Company Code" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">SN</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="SN" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="SN" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Device</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Device" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Device" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Type</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Type" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Type" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Buy Date</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Buy Date" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Buy Date" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Remark</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Remark" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Remark" :disabled="disabled == 0" />
                 </div>
             </div>
         </div>
     </main>
     <footer></footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
