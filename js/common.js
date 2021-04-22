@@ -1,48 +1,40 @@
-    function pa(data) {
-        alert(data);
-    }
+function cslog(arr) {
+    console.log(JSON.stringify(arr));
+}
 
-    function cslog(arr) {
-        console.log(JSON.stringify(arr));
+function AjaxJson(ref, params, callback) {
+    var Async = false;
+    var ProDa = true;
+    var ConType = true;
+    if (ref.async !== undefined) {
+        Async = ref.async;
     }
-
-    function paUrl(da) {
-        console.log(da);
+    if (ref.proda !== undefined) {
+        ProDa = ref.proda;
     }
-
-    function AjaxJson(ref, params, callback) {
-        var Async = false;
-        var ProDa = true;
-        var ConType = true;
-        if (ref.async !== undefined) {
-            Async = ref.async;
+    if (ref.contype !== undefined) {}
+    ConType = ref.contype;
+    return $.ajax({
+        url: ref.url,
+        data: ref.data,
+        type: 'POST',
+        dataType: 'json',
+        processData: ProDa,
+        contentType: ConType,
+        async: Async,
+        error: function(xhr, ajaxOptions, thrownError) {
+            pa(ref.url + '|' + xhr.responseText);
+        },
+        success: function(json) {
+            callback({ params: params, json: json });
+        },
+        beforeSend: function() {
+            $('.loader').show();
+        },
+        complete: function() {
+            $('.loader').hide();
         }
-        if (ref.proda !== undefined) {
-            ProDa = ref.proda;
-        }
-        if (ref.contype !== undefined) {}
-        ConType = ref.contype;
-        return $.ajax({
-            url: ref.url,
-            data: ref.data,
-            type: 'POST',
-            dataType: 'json',
-            processData: ProDa,
-            contentType: ConType,
-            async: Async,
-            error: function(xhr, ajaxOptions, thrownError) {
-                pa(ref.url + '|' + xhr.responseText);
-            },
-            success: function(json) {
-                callback({ params: params, json: json });
-            },
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            }
-        });
-    }
+    });
+}
 
-    let authApi = 'http://test-common.qve.com.tw/auth.aspx';
+let authApi = 'http://test-common.qve.com.tw/auth.aspx';
