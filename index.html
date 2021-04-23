@@ -21,9 +21,8 @@
     <main>
         <div id="app" class="container">
             <div class="buttonGroup mt-5 d-flex">
-                <button @click="disabled=1" class="btn btn-primary insert">Insert</button> &nbsp;&nbsp;
-                <button class="btn btn-warning query">Query</button>&nbsp;&nbsp;
-                <button class="btn btn-danger delete ml-auto">Delete</button>
+                <button @click="disabled=1" class="btn btn-primary insert" :disabled="disabled == 1">Insert</button> &nbsp;&nbsp; <button @click="disabled=0" class="btn btn-warning query">Query</button>&nbsp;&nbsp;
+                <button class="btn btn-info save ml-auto">Save</button>
             </div>
             <div class="row">
                 <div class="input-group mt-5 col-6">
