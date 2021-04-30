@@ -21,63 +21,75 @@
     <main>
         <div id="app" class="container">
             <div class="buttonGroup mt-5 d-flex">
-                <button @click="disabled=1" class="btn btn-primary insert" :disabled="disabled == 1">Insert</button> &nbsp;&nbsp; <button @click="disabled=0" class="btn btn-warning query">Query</button>&nbsp;&nbsp;
-                <button class="btn btn-info save ml-auto">Save</button>
+                <select name="insOrQueryFunc" id="insOrQueryFunc" class="form-control" style="width: 150px">
+                        <option value="Query">Query</option>
+                        <option value="Insert">Insert</option>
+                    </select>
+                <button class="btn btn-primary search" @click="search">OK</button>
+
+                <!-- <button @click="disabled=1" class="btn btn-primary insert" :disabled="disabled == 1">Insert</button> &nbsp;&nbsp; <button @click="disabled=0" class="btn btn-warning query">Query</button>&nbsp;&nbsp;
+                <button class="btn btn-info save ml-auto">Save</button> -->
             </div>
-            <div class="row">
+            <div class="row inputManu">
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Name</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" :disabled="disabled == 0" />
+                    <input type="text" id="userName" class="form-control" placeholder="Username" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">English Name</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="English Name" :disabled="disabled == 0" />
+                    <input type="text" id="enName" class="form-control" placeholder="English Name" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Location</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Location" :disabled="disabled == 0" />
+                    <input type="text" id="location" class="form-control" placeholder="Location" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Company Code</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Company Code" :disabled="disabled == 0" />
+                    <input type="text" id="companyCode" class="form-control" placeholder="Company Code" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">SN</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="SN" :disabled="disabled == 0" />
+                    <input type="text" id="sn" class="form-control" placeholder="SN" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Device</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Device" :disabled="disabled == 0" />
+                    <input type="text" id="device" class="form-control" placeholder="Device" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Type</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Type" :disabled="disabled == 0" />
+
+                    <select name="type" id="type" class="form-control" style="width: 150px">
+                            <option value="PC">PC</option>
+                            <option value="Monitor">Monitor</option>
+                        </select>
+                    <!-- <input type="text" id="type" class="form-control" placeholder="Type" :disabled="disabled == 0" /> -->
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Buy Date</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Buy Date" :disabled="disabled == 0" />
+                    <input type="date" id="buyDate" class="form-control" placeholder="Buy Date" :disabled="disabled == 0" />
                 </div>
                 <div class="input-group mt-5 col-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Remark</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Remark" :disabled="disabled == 0" />
+                    <textarea name="Text1" id="remark" class="form-control" cols="3" rows="3" :disabled="disabled == 0"></textarea>
+                    <!-- <input type="text" id="remark" multiple="3" class="form-control" placeholder="Remark" :disabled="disabled == 0" /> -->
                 </div>
             </div>
         </div>
