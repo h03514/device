@@ -17,7 +17,6 @@ const vm = Vue.createApp({
             obj.type = document.querySelector('#type').value;
             obj.buyDate = document.querySelector('#buyDate').value;
             obj.remark = document.querySelector('#remark').value;
-            cslog(obj)
             if (selVal == 'Query') {
 
             }
